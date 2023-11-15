@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="prack_7.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <TableView HeightRequest="700">
+        <TableRoot>
+            <TableSection Title="Перснальные данные">
+                <EntryCell
+                    x:Name="fio"
+                    Label="Фамилия"
+                    Placeholder="Введите фамилию" />
+
+                <EntryCell
+                    x:Name="name"
+                    Label="Имя"
+                    Placeholder="Введите имя" />
+
+                <EntryCell
+                    x:Name="lastName"
+                    Label="Отчество"
+                    Placeholder="Введите отчество" />
+
+                <ViewCell>
+                    <DatePicker
+                        x:Name="dateBirth"
+                        Margin="15,0,15,0"
+                        DateSelected="dateBirth_DateSelected" />
+                </ViewCell>
+
+                <TextCell x:Name="age" Text="Возраст - " />
+
+                <ViewCell>
+                    <StackLayout Margin="15,0,15,0" Orientation="Horizontal">
+                        <Label
+                            Margin="5,0,15,0"
+                            Text="Пол"
+                            VerticalOptions="Center" />
+
+                        <Picker Title="Выберите пол">
+                            <Picker.Items>
+                                <x:String>Мужской</x:String>
+                                <x:String>Женский</x:String>
+                                <x:String>Нейтральный пол</x:String>
+                                <x:String>Бигендерный</x:String>
+                                <x:String>Полубог</x:String>
+                                <x:String>Полумужчина</x:String>
+                                <x:String>Полу женщина</x:String>
+                                <x:String>Нон-байнарный</x:String>
+                                <x:String>Третий пол</x:String>
+                                <x:String>Андрогинный</x:String>
+                                <x:String>Гендерфлюидный</x:String>
+                                <x:String>Интерсекс</x:String>
+                                <x:String>Трансгендерный</x:String>
+                                <x:String>Транссексуал</x:String>
+                                <x:String>Двухдушный</x:String>
+                                <x:String>Гендер-несоответствующий</x:String>
+                                <x:String>Агендерный</x:String>
+                                <x:String>Бигендерный</x:String>
+                                <x:String>Гендер-вариантный</x:String>
+                                <x:String>Квир</x:String>
+                                <x:String>Аутентичный</x:String>
+                                <x:String>Гендер-конформный</x:String>
+                                <x:String>Гендер-флюидный</x:String>
+                                <x:String>Гендер-квир-флюидный</x:String>
+                                <x:String>Гендер-интенсивный</x:String>
+                                <x:String>Гендер-нейтрализующий</x:String>
+                                <x:String>Гендер-комфортный</x:String>
+                                <x:String>Гендер-разрушительный</x:String>
+                                <x:String>Гендер-радикальный</x:String>
+                                <x:String>Гендер-неподтвержденный</x:String>
+                            </Picker.Items>
+
+                        </Picker>
+
+                    </StackLayout>
+                </ViewCell>
+
+
+            </TableSection>
+
+            <TableSection x:Name="phone" Title="Телефоны">
+                <EntryCell Keyboard="Telephone" Placeholder="Введите телефон" />
+
+            </TableSection>
+
+            <TableSection x:Name="addphone" Title="Телефоны">
+                <ViewCell>
+                    <Button
+                        Margin="5,0,15,0"
+                        Clicked="AddPhone_Clicked"
+                        Text="Добавить телефон" />
+                </ViewCell>
+
+            </TableSection>
+
+        </TableRoot>
+
+    </TableView>
+
+</ContentPage>
