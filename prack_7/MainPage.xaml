@@ -3,23 +3,46 @@
     x:Class="prack_7.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="dotnet_bot.svg" Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="Red" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="WidthRequest" Value="310" />
+                <Setter Property="HeightRequest" Value="50" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
     <TableView HeightRequest="700">
         <TableRoot>
             <TableSection Title="Перснальные данные">
+                
+                
                 <EntryCell
                     x:Name="fio"
                     Label="Фамилия"
-                    Placeholder="Введите фамилию" />
+                    Placeholder="Иванов" />
 
                 <EntryCell
                     x:Name="name"
                     Label="Имя"
-                    Placeholder="Введите имя" />
+                    Placeholder="Иван" />
 
                 <EntryCell
                     x:Name="lastName"
                     Label="Отчество"
-                    Placeholder="Введите отчество" />
+                    Placeholder="Иванович" />
+                <EntryCell
+                    x:Name="O"
+                    Label="Оценки"
+                    Placeholder="Ваша оценка" />
 
                 <ViewCell>
                     <DatePicker
@@ -29,7 +52,6 @@
                 </ViewCell>
 
                 <TextCell x:Name="age" Text="Возраст - " />
-
                 <ViewCell>
                     <StackLayout Margin="15,0,15,0" Orientation="Horizontal">
                         <Label
@@ -37,54 +59,66 @@
                             Text="Пол"
                             VerticalOptions="Center" />
 
-                        <Picker Title="Выберите пол">
+                        <Picker x:Name="Pol" Title="Выберите пол">
                             <Picker.Items>
                                 <x:String>Мужской</x:String>
                                 <x:String>Женский</x:String>
-                                <x:String>Нейтральный пол</x:String>
-                                <x:String>Бигендерный</x:String>
-                                <x:String>Полубог</x:String>
-                                <x:String>Полумужчина</x:String>
-                                <x:String>Полу женщина</x:String>
-                                <x:String>Нон-байнарный</x:String>
-                                <x:String>Третий пол</x:String>
-                                <x:String>Андрогинный</x:String>
-                                <x:String>Гендерфлюидный</x:String>
-                                <x:String>Интерсекс</x:String>
-                                <x:String>Трансгендерный</x:String>
-                                <x:String>Транссексуал</x:String>
-                                <x:String>Двухдушный</x:String>
-                                <x:String>Гендер-несоответствующий</x:String>
-                                <x:String>Агендерный</x:String>
-                                <x:String>Бигендерный</x:String>
-                                <x:String>Гендер-вариантный</x:String>
-                                <x:String>Квир</x:String>
-                                <x:String>Аутентичный</x:String>
-                                <x:String>Гендер-конформный</x:String>
-                                <x:String>Гендер-флюидный</x:String>
-                                <x:String>Гендер-квир-флюидный</x:String>
-                                <x:String>Гендер-интенсивный</x:String>
-                                <x:String>Гендер-нейтрализующий</x:String>
-                                <x:String>Гендер-комфортный</x:String>
-                                <x:String>Гендер-разрушительный</x:String>
-                                <x:String>Гендер-радикальный</x:String>
-                                <x:String>Гендер-неподтвержденный</x:String>
+                                <x:String>Я гей</x:String>
+                                <x:String>Я Илья</x:String>
                             </Picker.Items>
 
                         </Picker>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
 
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Картинка"  />
+
+                        <Image
+                            x:Name="Ffff"
+                            Aspect="Fill"
+                            Source="dotnet_bot.png"  
+                            HeightRequest="100"
+                            WidthRequest="90" />
+                        <Button Margin="0,0,0,0"  Text="Выбрать"  Clicked="Button_Clicked" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Margin="15,0,15,0" Orientation="Horizontal">
+                        <Label
+                            Margin="5,0,15,0"
+                            Text="Староста"
+                            VerticalOptions="Center" />
+
+                        <Picker x:Name="Star" Title="Сделай свой выбор"  >
+                            <Picker.Items>
+                                <x:String>Да</x:String>
+                                <x:String>Нет</x:String>
+                            </Picker.Items>
+
+                        </Picker>
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Spacing="2 " Padding="2">
+                        <Button BackgroundColor="DarkOliveGreen" Clicked="Sohr" Text="Сохранить" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Spacing="2 " Padding="2" >
+                        <Button BackgroundColor="DarkOliveGreen" Clicked="PolSohr" Text="Получить сохранённое" />
                     </StackLayout>
                 </ViewCell>
 
-
             </TableSection>
 
-            <TableSection x:Name="phone" Title="Телефоны">
+            <!--<TableSection x:Name="phone" Title="Телефоны">
                 <EntryCell Keyboard="Telephone" Placeholder="Введите телефон" />
 
-            </TableSection>
+            </TableSection>-->
 
-            <TableSection x:Name="addphone" Title="Телефоны">
+            <!--<TableSection x:Name="addphone" Title="Телефоны">
                 <ViewCell>
                     <Button
                         Margin="5,0,15,0"
@@ -92,10 +126,11 @@
                         Text="Добавить телефон" />
                 </ViewCell>
 
-            </TableSection>
+            </TableSection>-->
 
         </TableRoot>
 
     </TableView>
 
 </ContentPage>
+

@@ -6,9 +6,16 @@
     xmlns:local="clr-namespace:prack_7"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    
+
+    <TabBar>
+        <Tab Title="1">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"></ShellContent>
+        </Tab>
+
+        <Tab Title="2">
+            <ShellContent ContentTemplate="{DataTemplate local:NewPage1}"></ShellContent>
+        </Tab>
+    </TabBar>
 
 </Shell>
